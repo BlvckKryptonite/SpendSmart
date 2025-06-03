@@ -58,14 +58,21 @@ button:hover {
   background-color: #005cd6;
 }
 
+
 #summary {
-  text-align: center;
+  text-align: center; /* Center everything in the section */
 }
 
+/* Chart section styling */
 canvas {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 1rem;
+  display: block; /* Remove any inline display issues */
+  margin: 1rem auto; /* Auto horizontal margins for centering */
+  max-width: 400px; /* Limit width to make it compact */
+  width: 100%; /* Responsive scaling */
+  height: auto; /* Maintain aspect ratio */
+  background-color: #fff; /* Optional: give it a clean background */
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .delete-btn {
