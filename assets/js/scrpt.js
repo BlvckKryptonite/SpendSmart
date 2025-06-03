@@ -4,8 +4,8 @@ const expenseInput = document.getElementById('expense');
 const categorySelect = document.getElementById('category');
 const addExpenseBtn = document.getElementById('add-expense');
 const wellnessScore = document.getElementById('wellness-score');
+const expenseList = document.getElementById('expense-list'); // New element to display list
 
-// Placeholder for future chart (Chart.js)
 let expenses = [];
 
 addExpenseBtn.addEventListener('click', function() {
@@ -20,9 +20,7 @@ addExpenseBtn.addEventListener('click', function() {
 
   expenses.push({ category, expense });
   updateWellnessScore(income, expense);
-  console.log('Expenses:', expenses); // For testing
-
-  // Future: Update chart here
+  displayExpenses(); // Call to display the list
 });
 
 function updateWellnessScore(income, expense) {
@@ -34,4 +32,16 @@ function updateWellnessScore(income, expense) {
   }
 
   wellnessScore.textContent = `Wellness Score: ${score}%`;
+}
+
+function displayExpenses() {
+  // Clear the list first
+  expenseList.innerHTML = '';
+
+  // Loop through the array and create list items
+  expenses.forEach(function(item) {
+    const li = document.createElement('li');
+    li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
+    expenseList.appendChild(li);
+  });
 }
