@@ -67,13 +67,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Display Expenses in a List
   function displayExpenses() {
-    expenseList.innerHTML = '';
-    expenses.forEach(function(item) {
-      const li = document.createElement('li');
-      li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
-      expenseList.appendChild(li);
+  expenseList.innerHTML = ''; // Clear existing entries
+
+  // Loop through expenses and create a list item for each
+  expenses.forEach(function(item, index) {
+    const li = document.createElement('li');
+    li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
+
+    // Create a delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Remove';
+    deleteBtn.classList.add('delete-btn');
+
+    // Add a click event to remove this expense
+    deleteBtn.addEventListener('click', function() {
+      expenses.splice(index, 1); // Remove from array
+      displayExpenses(); // Update list
+      updateChart(); // Update chart
     });
-  }
+
+    // Add the delete button to the list item
+    li.appendChild(deleteBtn);
+
+    // Add the list item to the UL
+    expenseList.appendChild(li);
+  });
+}
 
   // Update the Chart with current expenses
   function updateChart() {
@@ -93,3 +112,5 @@ document.addEventListener('DOMContentLoaded', function() {
     expenseChart.update();
   }
 });
+
+
