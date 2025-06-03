@@ -47,12 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     updateWellnessScore(income, expense);
     displayExpenses();
     updateChart();
-  });
 
-  // Reset the expense input and category select
+    // ✅ Reset the expense input and category select
   expenseInput.value = '';
-  categorySelect.selectedIndex = 0; // reset to first option
-});
+  categorySelect.selectedIndex = 0;
+  });
 
   // Update Wellness Score
   function updateWellnessScore(income, expense) {
