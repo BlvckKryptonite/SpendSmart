@@ -1,7 +1,5 @@
-// Wait for the entire DOM to finish loading before running the script
 document.addEventListener('DOMContentLoaded', function() {
-
-  // Select DOM elements we'll use
+  // Select DOM elements
   const incomeInput = document.getElementById('income');
   const expenseInput = document.getElementById('expense');
   const categorySelect = document.getElementById('category');
@@ -9,52 +7,62 @@ document.addEventListener('DOMContentLoaded', function() {
   const wellnessScore = document.getElementById('wellness-score');
   const expenseList = document.getElementById('expense-list');
 
-  // Array to store expense entries
   let expenses = [];
 
-  // When the "Add Expense" button is clicked
+  // Initialize Chart.js
+  const ctx = document.getElementById('budget-chart').getContext('2d');
+  const expenseChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: [], // Categories
+      datasets: [{
+        label: 'Expenses by Category',
+        data: [], // Expense amounts
+        backgroundColor: ['#1a7bff', '#28a745', '#ffc107', '#dc3545', '#6f42c1'],
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+
+  // Add Expense button click
   addExpenseBtn.addEventListener('click', function() {
-    // Get numeric values from inputs
     const income = parseFloat(incomeInput.value);
     const expense = parseFloat(expenseInput.value);
     const category = categorySelect.value;
 
-    // Check if income or expense is empty or zero
     if (!income || !expense) {
       alert('Please enter both income and expense amounts.');
       return;
     }
 
-    // Save this expense entry to our array
     expenses.push({ category, expense });
-
-    // Update the wellness score
     updateWellnessScore(income, expense);
-
-    // Display all expenses in the list
     displayExpenses();
+    updateChart();
   });
 
-  // Function to calculate and display the wellness score
+  // Update Wellness Score
   function updateWellnessScore(income, expense) {
     const balance = income - expense;
     let score = 0;
 
-    // Calculate percentage of money left over (wellness score)
     if (balance > 0) {
       score = Math.round((balance / income) * 100);
     }
 
-    // Update the text on the page
     wellnessScore.textContent = `Wellness Score: ${score}%`;
   }
 
-  // Function to display the expense entries in a list
+  // Display Expenses in a List
   function displayExpenses() {
-    // Clear the list before adding new items
     expenseList.innerHTML = '';
-
-    // Create a list item for each expense entry
     expenses.forEach(function(item) {
       const li = document.createElement('li');
       li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
@@ -62,4 +70,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Update the Chart with current expenses
+  function updateChart() {
+    // Calculate totals for each category
+    const categoryTotals = {};
+    expenses.forEach(function(item) {
+      if (categoryTotals[item.category]) {
+        categoryTotals[item.category] += item.expense;
+      } else {
+        categoryTotals[item.category] = item.expense;
+      }
+    });
+
+    // Update chart data
+    expenseChart.data.labels = Object.keys(categoryTotals);
+    expenseChart.data.datasets[0].data = Object.values(categoryTotals);
+    expenseChart.update();
+  }
 });
