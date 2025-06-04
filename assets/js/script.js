@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Select DOM elements
   const incomeInput = document.getElementById('income');
   const expenseInput = document.getElementById('expense');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Add Expense button click
-  addExpenseBtn.addEventListener('click', function() {
+  addExpenseBtn.addEventListener('click', function () {
     const income = parseFloat(incomeInput.value);
     const expense = parseFloat(expenseInput.value);
     const category = categorySelect.value;
@@ -48,10 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
     displayExpenses();
     updateChart();
 
-    // ✅ Reset the expense input and category select
-  expenseInput.value = '';
-  categorySelect.selectedIndex = 0;
+    // Reset the expense input and category select
+    expenseInput.value = '';
+    categorySelect.selectedIndex = 0;
   });
+
 
   // Update Wellness Score
   function updateWellnessScore(income, expense) {
@@ -63,42 +64,57 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     wellnessScore.textContent = `Wellness Score: ${score}%`;
+
+    // Event listener for the Get Insight button
+    document.getElementById("get-insight").addEventListener("click", function () {
+      const score = wellnessScore; // Replace this if you're storing it differently
+
+      if (score > 80) {
+        console.log("🎉 You have a great SpendSmart wellness score — fantastic job managing your money!");
+      } else if (score >= 60) {
+        console.log("👏 You're doing well, but there's room for improvement. Keep tracking those expenses!");
+      } else if (score >= 40) {
+        console.log("⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.");
+      } else {
+        console.log("🚨 Time to reassess your budget! Let's work toward a healthier financial balance.");
+      }
+    });
   }
 
   // Display Expenses in a List
   function displayExpenses() {
-  expenseList.innerHTML = ''; // Clear existing entries
+    expenseList.innerHTML = ''; // Clear existing entries
 
-  // Loop through expenses and create a list item for each
-  expenses.forEach(function(item, index) {
-    const li = document.createElement('li');
-    li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
+    // Loop through expenses and create a list item for each
+    expenses.forEach(function (item, index) {
+      const li = document.createElement('li');
+      li.textContent = `${item.category}: $${item.expense.toFixed(2)}`;
 
-    // Create a delete button
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Remove';
-    deleteBtn.classList.add('delete-btn');
+      // Create a delete button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Remove';
+      deleteBtn.classList.add('delete-btn');
 
-    // Add a click event to remove this expense
-    deleteBtn.addEventListener('click', function() {
-      expenses.splice(index, 1); // Remove from array
-      displayExpenses(); // Update list
-      updateChart(); // Update chart
+      // Add a click event to remove this expense
+      deleteBtn.addEventListener('click', function () {
+        expenses.splice(index, 1); // Remove from array
+        displayExpenses(); // Update list
+        updateChart(); // Update chart
+      });
+
+      // Add the delete button to the list item
+      li.appendChild(deleteBtn);
+
+      // Add the list item to the UL
+      expenseList.appendChild(li);
     });
-
-    // Add the delete button to the list item
-    li.appendChild(deleteBtn);
-
-    // Add the list item to the UL
-    expenseList.appendChild(li);
-  });
-}
+  }
 
   // Update the Chart with current expenses
   function updateChart() {
     // Calculate totals for each category
     const categoryTotals = {};
-    expenses.forEach(function(item) {
+    expenses.forEach(function (item) {
       if (categoryTotals[item.category]) {
         categoryTotals[item.category] += item.expense;
       } else {
