@@ -53,39 +53,40 @@ document.addEventListener('DOMContentLoaded', function () {
     categorySelect.selectedIndex = 0;
   });
 
-// Variable to track wellness score
-const wellnessScoreDisplay = document.getElementById("wellness-score"); 
-let latestScore = 0; 
+  // Variable to track wellness score
+  const wellnessScoreDisplay = document.getElementById("wellness-score");
+  let latestScore = 0;
 
-// Update Wellness Score
-function updateWellnessScore(income, expense) {
-  const balance = income - expense;
-  let score = 0;
+  // Update Wellness Score
+  function updateWellnessScore(income, expense) {
+    const balance = income - expense;
+    let score = 0;
 
-  if (balance > 0) {
-    score = Math.round((balance / income) * 100);
+    if (balance > 0) {
+      score = Math.round((balance / income) * 100);
+    }
+
+    latestScore = score; // Store for insight message
+
+    wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
   }
 
-  latestScore = score; // Store for insight message
+  // Insight Button Event Listener (trigger only once)
+  document.getElementById("get-insight").addEventListener("click", function () {
+    const messageElement = document.getElementById("insight-message");
 
-  wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
-}
-
-// Insight Button Event Listener (trigger only once)
-document.getElementById("get-insight").addEventListener("click", function () {
-  const messageElement = document.getElementById("insight-message");
-
-  if (latestScore > 80) {
-    messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
-  } else if (latestScore >= 60) {
-    messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
-  } else if (latestScore >= 40) {
-    messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
-  } else {
-    messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
-  }
-});
-
+    if (isNaN(latestScore)) {
+      messageElement.textContent = "❌ Please enter your income and expenses first.";
+    } else if (latestScore > 80) {
+      messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
+    } else if (latestScore >= 60) {
+      messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
+    } else if (latestScore >= 40) {
+      messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
+    } else {
+      messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
+    }
+  });
 
   // Display Expenses in a List
   function displayExpenses() {
