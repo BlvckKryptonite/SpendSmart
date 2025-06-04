@@ -1,8 +1,8 @@
 /* Basic Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -11,10 +11,10 @@
 }
 
 body {
-  font-family: 'lato', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+    font-family: 'lato', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
 h2 {
@@ -23,94 +23,132 @@ h2 {
 }
 
 header {
-  background-color: #ffffff;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }
 
 footer {
-  background-color: #00ad0b;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
+    background-color: #00ad0b;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }
 
 main {
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 section {
-  margin-bottom: 2rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 5px;
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 label {
-  display: block;
-  margin: 0.5rem 0 0.2rem;
+    display: block;
+    margin: 0.5rem 0 0.2rem;
 }
 
-input, select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+input,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 button {
-  display: block;
-  width: 100%;
-  background-color: #00ad0b;
-  color: #fff;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 5px;
-  cursor: pointer;
+    display: block;
+    width: 100%;
+    background-color: #00ad0b;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #00ce0e;
+    background-color: hsl(124, 100%, 40%);
+}
+
+/* Wellness score message styling */
+.insight-container {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f6fff3; /* light subtle background */
+    border-left: 2px solid #00ad0b;
+    border-right: 2px solid #00ad0b;
+    border-radius: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    min-height: 40px;
 }
 
 .btn--gray {
-    margin-top: 25px;
-    background-color: #445361;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.3rem;
+    font-family: 'oswald', sans-serif;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background-color: #000000;
     border: 1px transparent;
     border-radius: 20px;
+    width: 40%;
 }
 
 
+#insight-message {
+    margin: 0;
+}
+
 #summary {
-  text-align: center; /* Center everything in the summary section */
+    text-align: center;
+    /* Center everything in the summary section */
 }
 
 /* Chart section styling */
 canvas {
-  display: block; /* Remove any inline display issues */
-  margin: 1rem auto; /* Auto horizontal margins for centering */
-  max-width: 400px; /* Limit width to make it compact */
-  min-width: 200px; /* Prevent it from shrinking below 200px on smaller screens */
-  width: 100%; /* Responsive scaling */
-  height: auto; /* Maintain aspect ratio */
-  background-color: #fff; 
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth and improve visual appeal */
+    display: block;
+    /* Remove any inline display issues */
+    margin: 1rem auto;
+    /* Auto horizontal margins for centering */
+    max-width: 400px;
+    /* Limit width to make it compact */
+    min-width: 200px;
+    /* Prevent it from shrinking below 200px on smaller screens */
+    width: 100%;
+    /* Responsive scaling */
+    height: auto;
+    /* Maintain aspect ratio */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth and improve visual appeal */
 }
 
 .delete-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: 1px;
-  size: small;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px;
+    size: small;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 
 .delete-btn:hover {
-  background-color: #c82333;
+    background-color: #c82333;
 }
