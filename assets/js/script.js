@@ -71,43 +71,41 @@ document.addEventListener('DOMContentLoaded', function () {
     wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
   }
 
+  function getTotalExpenses() {
+    return expenses.reduce((total, item) => total + item.expense, 0);
+  }
+
   // Insight Button Event Listener 
   document.getElementById("get-insight").addEventListener("click", function () {
-  const messageElement = document.getElementById("insight-message");
+    const messageElement = document.getElementById("insight-message");
 
-  const incomeValue = parseFloat(incomeInput.value);
-  const expenseValue = parseFloat(expenseInput.value);
+    const totalExpenses = getTotalExpenses();
 
-  // If valid input exists AND old warning is showing -- clear field
-  if (incomeValue && expenseValue && messageElement.textContent.includes("Please enter your income")) {
-    messageElement.textContent = "";
-  }
+    // Show error if there are no expenses
+    if (totalExpenses === 0) {
+      messageElement.textContent = "❌ Please enter your income and expenses first.";
 
-  // Show warning message if data is still missing
-  if (!incomeValue || !expenseValue) {
-    messageElement.textContent = "❌ Please enter your income and expenses first.";
+      // Auto-clear this error warning after 5 seconds
+      setTimeout(() => {
+        if (messageElement.textContent.includes("Please enter your income")) {
+          messageElement.textContent = "";
+        }
+      }, 5000);
 
-    // Auto-clear this warning after 5 seconds
-    setTimeout(() => {
-      if (messageElement.textContent.includes("Please enter your income")) {
-        messageElement.textContent = "";
-      }
-    }, 5000);
+      return;
+    }
 
-    return;
-  }
-
-  // Proceed with insight message based on score
-  if (latestScore > 80) {
-    messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
-  } else if (latestScore >= 60) {
-    messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
-  } else if (latestScore >= 40) {
-    messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
-  } else {
-    messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
-  }
-});
+    // Valid score exists → Show insight message
+    if (latestScore > 80) {
+      messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
+    } else if (latestScore >= 60) {
+      messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
+    } else if (latestScore >= 40) {
+      messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
+    } else {
+      messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
+    }
+  });
 
   // Display Expenses in a List
   function displayExpenses() {
