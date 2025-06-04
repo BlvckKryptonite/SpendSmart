@@ -71,22 +71,30 @@ document.addEventListener('DOMContentLoaded', function () {
     wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
   }
 
-  // Insight Button Event Listener (trigger only once)
+  // Insight Button Event Listener 
   document.getElementById("get-insight").addEventListener("click", function () {
-    const messageElement = document.getElementById("insight-message");
+  const messageElement = document.getElementById("insight-message");
 
-    if (isNaN(latestScore)) {
-      messageElement.textContent = "❌ Please enter your income and expenses first.";
-    } else if (latestScore > 80) {
-      messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
-    } else if (latestScore >= 60) {
-      messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
-    } else if (latestScore >= 40) {
-      messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
-    } else {
-      messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
-    }
-  });
+  const incomeValue = parseFloat(incomeInput.value);
+  const expenseValue = parseFloat(expenseInput.value);
+
+  // Check if income or expense is missing or zero
+  if (!incomeValue || !expenseValue) {
+    messageElement.textContent = "❌ Please enter your income and expenses first.";
+    return;
+  }
+
+  // Proceed with insight message based on score
+  if (latestScore > 80) {
+    messageElement.textContent = "🎉 You have a great SpendSmart wellness score — fantastic job managing your money!";
+  } else if (latestScore >= 60) {
+    messageElement.textContent = "👏 You're doing well, but there's room for improvement. Keep tracking those expenses!";
+  } else if (latestScore >= 40) {
+    messageElement.textContent = "⚠️ Your SpendSmart score is below average. Consider cutting back on non-essential expenses.";
+  } else {
+    messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
+  }
+});
 
   // Display Expenses in a List
   function displayExpenses() {

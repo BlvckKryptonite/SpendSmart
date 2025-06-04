@@ -81,7 +81,8 @@ button:hover {
     margin-top: 0.2rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #f6fff3; /* light subtle background */
+    background-color: #f6fff3;
+    /* light subtle background */
     border-left: 2px solid #00ad0b;
     border-right: 2px solid #00ad0b;
     border-radius: 5px;
@@ -141,6 +142,8 @@ canvas {
 .delete-btn {
     background-color: #dc3545;
     color: #fff;
+    display: block;
+    margin: 0 auto;
     border: 1px;
     size: small;
     padding: 0.2rem 0.5rem;
