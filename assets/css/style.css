@@ -5,19 +5,37 @@
   box-sizing: border-box;
 }
 
+.logo {
+    width: auto;
+    vertical-align: middle;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'lato', sans-serif;
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
 
-header, footer {
-  background-color: #1a7bff;
+h2 {
+    font-family: 'oswald', sans-serif;
+    text-align: center;
+}
+
+header {
+  background-color: #ffffff;
   color: #fff;
   text-align: center;
   padding: 1rem;
 }
+
+footer {
+  background-color: #00ad0b;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
 
 main {
   padding: 1rem;
@@ -46,7 +64,7 @@ input, select {
 button {
   display: block;
   width: 100%;
-  background-color: #1a7bff;
+  background-color: #00ad0b;
   color: #fff;
   border: none;
   padding: 0.7rem;
@@ -55,7 +73,7 @@ button {
 }
 
 button:hover {
-  background-color: #005cd6;
+  background-color: #00ce0e;
 }
 
 
@@ -80,6 +98,7 @@ canvas {
   background-color: #dc3545;
   color: #fff;
   border: 1px;
+  size: small;
   padding: 0.2rem 0.5rem;
   border-radius: 3px;
   cursor: pointer;
