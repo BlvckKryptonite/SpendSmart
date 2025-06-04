@@ -78,9 +78,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const incomeValue = parseFloat(incomeInput.value);
   const expenseValue = parseFloat(expenseInput.value);
 
-  // Check if income or expense is missing or zero
+  // If valid input exists AND old warning is showing -- clear field
+  if (incomeValue && expenseValue && messageElement.textContent.includes("Please enter your income")) {
+    messageElement.textContent = "";
+  }
+
+  // Show warning message if data is still missing
   if (!incomeValue || !expenseValue) {
     messageElement.textContent = "❌ Please enter your income and expenses first.";
+
+    // Auto-clear this warning after 5 seconds
+    setTimeout(() => {
+      if (messageElement.textContent.includes("Please enter your income")) {
+        messageElement.textContent = "";
+      }
+    }, 5000);
+
     return;
   }
 
