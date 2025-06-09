@@ -11,9 +11,8 @@ header {
 }
 
 .logo {
-  max-width: 100px; 
-  width: 80%;
-  height: auto;
+    width: auto;
+    vertical-align: middle;
 }
 
 body {
