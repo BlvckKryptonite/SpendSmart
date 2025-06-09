@@ -99,10 +99,10 @@ button:hover {
     margin-top: 0.2rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #f6fff3;
+    background-color: #ffa28a;
     /* light subtle background */
-    border-left: 2px solid #00ad0b;
-    border-right: 2px solid #00ad0b;
+    border-left: 2px solid ##ad2300;
+    border-right: 2px solid ##ad2300;
     border-radius: 5px;
     max-width: 400px;
     margin-left: auto;
