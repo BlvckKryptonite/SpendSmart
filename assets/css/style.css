@@ -186,10 +186,17 @@ canvas {
     font-size: 0.95rem;
   }
 
+  .logo {
+  width: 80%;
+  max-width: 120px;
+  height: auto;
+}
+
   .btn--gray {
     width: 90%;
     font-size: 1.1rem;
   }
+
 
   input,
   select {
