@@ -1,10 +1,12 @@
+/* jshint esversion: 6 */
+/* global Chart */
+
 document.addEventListener('DOMContentLoaded', function () {
   // Select DOM elements
   const incomeInput = document.getElementById('income');
   const expenseInput = document.getElementById('expense');
   const categorySelect = document.getElementById('category');
   const addExpenseBtn = document.getElementById('add-expense');
-  const wellnessScore = document.getElementById('wellness-score');
   const expenseList = document.getElementById('expense-list');
 
   let expenses = [];
@@ -106,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
       messageElement.textContent = "🚨 Time to reassess your budget! Let's work toward a healthier financial balance.";
     }
   });
+
 
   // Display Expenses in a List
   function displayExpenses() {
