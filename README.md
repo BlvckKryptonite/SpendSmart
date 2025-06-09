@@ -60,8 +60,13 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - Mobile responsiveness tested with Chrome DevTools and a real smartphone  
 - Manual testing of all buttons, input fields, and dynamic updates  
 - Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate  
-- JavaScript validated with [JSHint](https://jshint.com/) — no major issues  
-- HTML validated with [W3C Validator](https://validator.w3.org/) — minor issues resolved  
+- JavaScript validated with [JSHint](https://jshint.com/) — no major issues:
+![JSHint validation screenshot](assets/images/jshint-validation.png)
+
+- HTML validated with [W3C Validator](https://validator.w3.org/) — minor issues resolved:
+
+ ![W3C validation screenshot](assets/images/w3c-validation.png)
+ 
 
 **User Story Testing:**
 
