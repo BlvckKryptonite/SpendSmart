@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update UI with new score and leftover
     wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
-    leftoverDisplay.textContent = `Leftover: $${balance.toFixed(2)}`;
+    leftoverDisplay.textContent = `Leftover Income: $${balance.toFixed(2)}`;
   }
 
   /**
