@@ -96,15 +96,14 @@ button:hover {
 }
 
 .leftover {
-    margin-top: 0.2rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #ffa28a;
-    /* light subtle background */
-    border-left: 2px solid ##ad2300;
-    border-right: 2px solid ##ad2300;
+    background-color: #cfcfcf;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
     border-radius: 5px;
-    max-width: 400px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
