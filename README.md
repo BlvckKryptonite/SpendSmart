@@ -35,10 +35,10 @@ The Wellness Score is calculated as the percentage of your income remaining afte
 `(Income - Total Expenses) ÷ Income × 100`
 
 ### Score Meaning:
-- **81–100%** → 🎉 Excellent
-- **60–80%** → 👍 Good
-- **40–59%** → ⚠️ Fair
-- **0–39%** → 🚨 Poor
+- **81–100%** → Excellent
+- **60–80%** → Good
+- **40–59%** → Fair
+- **0–39%** → Poor
 
 A higher score means you're managing your budget well, while a lower score suggests overspending.
 
@@ -79,6 +79,8 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - Manual testing of all buttons, input fields, and dynamic updates  
 - Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate  
 - JavaScript validated with [JSHint](https://jshint.com/) — no major issues:
+
+  
 ![JSHint validation screenshot](assets/images/jshint-validation.png)
 
 - HTML validated with [W3C Validator](https://validator.w3.org/) — minor issues resolved:
