@@ -179,3 +179,43 @@ canvas {
 .delete-btn:hover {
     background-color: #c82333;
 }
+
+/* Responsive Fixes for Tiny Screens (<= 375px) */
+@media screen and (max-width: 375px) {
+  body {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    max-width: 80px;
+    width: 60%;
+  }
+
+  .btn--gray {
+    width: 90%;
+    font-size: 1.1rem;
+  }
+
+  input,
+  select {
+    font-size: 0.95rem;
+  }
+
+  .insight-container,
+  .leftover {
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  canvas {
+    max-width: 100%;
+    min-width: 150px;
+  }
+
+  .delete-btn {
+    width: 50%;
+    font-size: 0.85rem;
+  }
+}
