@@ -5,9 +5,15 @@
     box-sizing: border-box;
 }
 
+header {
+  text-align: center;
+  padding: 10px 0;
+}
+
 .logo {
-    width: auto;
-    vertical-align: middle;
+  max-width: 100px; 
+  width: 80%;
+  height: auto;
 }
 
 body {
