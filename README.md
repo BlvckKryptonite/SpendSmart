@@ -1,6 +1,6 @@
 # SpendSmart
 
-SpendSmart is a responsive JavaScript-based budgeting app designed to help users log income and expenses, visualize their spending habits, and gain real-time insight into their financial wellness.
+SpendSmart is a responsive JavaScript-based budgeting web app designed to help users log income and expenses, visualize their spending habits, and gain real-time insight into their financial wellness.
 
 ---
 
@@ -27,9 +27,27 @@ SpendSmart is a responsive JavaScript-based budgeting app designed to help users
 
 ---
 
+## 💡 How the Wellness Score Works
+
+The Wellness Score is calculated as the percentage of your income remaining after expenses:
+
+**Formula:**  
+`(Income - Total Expenses) ÷ Income × 100`
+
+### Score Meaning:
+- **81–100%** → 🎉 Excellent
+- **60–80%** → 👍 Good
+- **40–59%** → ⚠️ Fair
+- **0–39%** → 🚨 Poor
+
+A higher score means you're managing your budget well, while a lower score suggests overspending.
+
+---
+
 ## Wireframes
 
 The wireframe below represents the final layout structure of the SpendSmart app:
+-
 
 ![SpendSmart Wireframe](assets/images/spendsmart-wireframe.png)
 
@@ -81,14 +99,14 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 
 ## Deployment
 
-- **Live Site**: [View SpendSmart](https://yourusername.github.io/spendsmart)  
-- **GitHub Repo**: [GitHub - SpendSmart](https://github.com/yourusername/spendsmart)  
+- **Live Site**: [View SpendSmart](https://blvckkryptonite.github.io/SpendSmart/)  
+- **GitHub Repo**: [GitHub - SpendSmart](https://github.com/BlvckKryptonite/SpendSmart.git)  
 - Deployed via GitHub Pages  
-- Assets folder includes logo, wireframe, and sample expense icons (optional)  
+- Assets folder includes Javascript file, images and stylesheet
 
 ---
 
-## Future Improvements
+## Potential Future Improvements
 
 - Add persistent storage using localStorage or IndexedDB  
 - Enable income history tracking  
@@ -102,7 +120,7 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - Chart.js: [https://www.chartjs.org](https://www.chartjs.org)  
 - Font: Google Fonts (Lato + Oswald)  
 - Logo: Created with Canva  
-- Wireframe sketch: Created using hand-drawn wireframe concept and AI enhancement  
+- Wireframe sketch: Created using hand-drawn wireframe concept and enhanced with AI (Chat GPT-4o) 
 
 ---
 
