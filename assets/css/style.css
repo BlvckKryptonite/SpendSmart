@@ -11,8 +11,10 @@ header {
 }
 
 .logo {
-    width: auto;
-    vertical-align: middle;
+  max-width: 100px; /* prevents it from being too large */
+  width: 80%;
+  vertical-align: middle;
+  height: auto;
 }
 
 body {
