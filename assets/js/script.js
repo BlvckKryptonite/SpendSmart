@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     latestScore = score; // Store for insight message
+    document.getElementById("leftover-summary").textContent = `Leftover: $${balance.toFixed(2)}`;
+
 
     wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
   }
