@@ -31,7 +31,7 @@ SpendSmart is a responsive JavaScript-based budgeting app designed to help users
 
 The wireframe below represents the final layout structure of the SpendSmart app:
 
-!assets/images/spendsmart wireframe.png
+![Wireframe](assets/images/spendsmart wireframe.png)
 
 
 **Layout Structure:**
