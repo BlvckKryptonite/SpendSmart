@@ -175,10 +175,10 @@ canvas {
     width: 20%;
 }
 
-
 .delete-btn:hover {
     background-color: #c82333;
 }
+
 
 /* Responsive Fixes for Tiny Screens (<= 375px) */
 @media screen and (max-width: 375px) {
