@@ -60,24 +60,21 @@ document.addEventListener('DOMContentLoaded', function () {
   let latestScore = 0;
 
   // Update Wellness Score
-  function updateWellnessScore(income, expense) {
-    const balance = income - expense;
-    let score = 0;
+ function updateWellnessScore(income) {
+  // Sum all expenses
+  const totalExpenses = expenses.reduce((acc, item) => acc + item.expense, 0);
+  const balance = income - totalExpenses;
+  let score = 0;
 
-    if (balance > 0) {
-      score = Math.round((balance / income) * 100);
-    }
-
-    latestScore = score; // Store for insight message
-    document.getElementById("leftover-summary").textContent = `Leftover: $${balance.toFixed(2)}`;
-
-
-    wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
+  if (balance > 0) {
+    score = Math.round((balance / income) * 100);
   }
 
-  function getTotalExpenses() {
-    return expenses.reduce((total, item) => total + item.expense, 0);
-  }
+  latestScore = score; // Update global score
+
+  wellnessScoreDisplay.textContent = `Wellness Score: ${score}%`;
+  document.getElementById("leftover-summary").textContent = `Leftover: $${balance.toFixed(2)}`;
+}
 
   // Insight Button Event Listener 
   document.getElementById("get-insight").addEventListener("click", function () {
