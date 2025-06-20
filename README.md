@@ -89,7 +89,7 @@ The wireframe below represents the final layout structure of the SpendSmart app:
   
 ![JSHint validation screenshot](assets/images/jshint-validation.png)
 
---
+---
 
 - HTML validated with [W3C Validator](https://validator.w3.org/) — minor issues resolved:
 
