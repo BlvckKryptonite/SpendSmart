@@ -11,7 +11,7 @@ SpendSmart is a responsive JavaScript-based budgeting web app designed to help u
 - Live wellness score calculation based on remaining balance  
 - Insightful message output based on wellness score thresholds  
 - Clear, styled expense log with removable entries  
-- Responsive and accessible design across devices:
+- Responsive and accessible design across devices (see wireframe below):
 
  ![SpendSmart Wireframe](assets/images/mockup.png)
 
