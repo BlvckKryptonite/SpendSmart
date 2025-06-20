@@ -30,7 +30,7 @@ SpendSmart is a responsive JavaScript-based budgeting web app designed to help u
 
 ---
 
-## 💡 How the Wellness Score Works
+## 💡 Wellness Score Calculation
 
 The Wellness Score is calculated as the percentage of your income remaining after expenses:
 
@@ -77,10 +77,13 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 
 ## Testing
 
+### Browser and Device Testing 
 - Tested on Chrome, Firefox, Edge, and Safari  
 - Mobile responsiveness tested with Chrome DevTools and a real smartphone  
 - Manual testing of all buttons, input fields, and dynamic updates  
-- Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate  
+- Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate
+
+  ### Code Validation 
 - JavaScript validated with [JSHint](https://jshint.com/) — no major issues:
 
   
