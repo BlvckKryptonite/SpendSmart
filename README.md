@@ -94,6 +94,19 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - HTML validated with [W3C Validator](https://validator.w3.org/) — minor issues resolved:
 
  ![W3C validation screenshot](assets/images/w3c-validation.png)
+
+ 
+ ### Functionality Testing
+
+ | Feature         | Expected Outcome                             | Test Method            | Result |
+| --------------- | -------------------------------------------- | ---------------------- | ------ |
+| Add Income      | Income field accepts positive numbers        | Manual input test      | Pass |
+| Add Expense     | Expense added to list with selected category | Click "Add Expense"    | Pass |
+| Delete Expense  | Expense removed from list and recalculated   | Click "Remove" button  | Pass |
+| Wellness Score  | Updated correctly after each expense         | Triggered via function | Pass |
+| Chart           | Updates dynamically based on categories      | Visual chart update    | Pass |
+| Insight Message | Displays based on score thresholds           | Click "Get Insight"    | Pass |
+
  
 
 **User Story Testing:**
