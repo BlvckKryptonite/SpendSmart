@@ -86,16 +86,25 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 ![Lighthouse report](assets/images/lighthouse-report)
 
 
-### Bugs
+
+## Bugs
 While I did not experience any major functional bugs, I identified a critical logic bug in the late development process. 
 
-The wellness score was function only considered the most recent expense, not the total of all expenses. Therefore, it did not function as intended as the "Get Insight" button often provided misleading messages.
+### Logic Bug: Incorrect Wellness Score Calculation
 
-For example, even if total expenses surpurssed total income but a user put in a new small expense relative to total income they would get a message congratulating them for their great wellness score despite having zero savings. This is because the function only considered the most recent expense and not the total expenses.
+- **Issue:**  
+  The wellness score calculation only considered the most recent expense, not the total of all expenses.
 
-I fixed this by updating the wellness score function to sum up all expenses. The subsequent value was what was then used to update the global score (ie "latestScore").
+- **Impact:**  
+  This led to inaccurate financial insights. For example, a user whose total expenses had already surpassed their income could still receive a congratulatory message based on a small new expense — misleading them about their actual financial status.
 
-All this can be seen in the commit history.
+- **Fix:**  
+  The `calculateWellnessScore()` function was updated to sum all expenses rather than referencing the latest one. This total was then used to update the `latestScore` value, which drives both the score display and the insight messages.
+
+- **Verification:**  
+  Fix verified through manual testing and visible in the [GitHub commit history](https://github.com/BlvckKryptonite/SpendSmart/commits/master).
+
+
 
 ### Code Validation 
 - JavaScript validated with [JSHint](https://jshint.com/) — no major issues:
