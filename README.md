@@ -125,6 +125,7 @@ While I did not experience any major functional bugs, I identified a critical lo
  ---
 
  - CSS validated with [W3C css validation service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
 ![W3C validation screenshot](assets/images/W3C-css-validation)
 
 
