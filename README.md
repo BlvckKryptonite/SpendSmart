@@ -122,9 +122,13 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 
 ## Deployment
 
+The site was deployed to GitHub pages. The following are the deployment steps:
+- In the GitHub repository, navigate to the settings tab
+- From the source section drop-down menu, select the master branch
+- When the master branch has been selected, the page provided the link to the completed website
+
 - **Live Site**: [View SpendSmart](https://blvckkryptonite.github.io/SpendSmart/)  
-- **GitHub Repo**: [GitHub - SpendSmart](https://github.com/BlvckKryptonite/SpendSmart.git)  
-- Deployed via GitHub Pages  
+- **GitHub Repo**: [GitHub - SpendSmart](https://github.com/BlvckKryptonite/SpendSmart.git)   
 - Assets folder includes Javascript file, images and stylesheet
 
 ---
