@@ -83,6 +83,17 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - Manual testing of all buttons, input fields, and dynamic updates  
 - Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate
 
+###Bugs
+While I did not experience any major functional bugs, I identified a critical logic bug in the late development process. 
+
+The wellness score was function only considered the most recent expense, not the total of all expenses. Therefore, it did not function as intended as the "Get Insight" button often provided misleading messages.
+
+For example, even if total expenses surpurssed total income but a user put in a new small expense relative to total income they would get a message congratulating them for their great wellness score despite having zero savings. This is because the function only considered the most recent expense and not the total expenses.
+
+I fixed this by updating the wellness score function to sum up all expenses. The subsequent value was what was then used to update the global score (ie "latestScore").
+
+All this can be seen in the commit history.
+
 ### Code Validation 
 - JavaScript validated with [JSHint](https://jshint.com/) — no major issues:
 
