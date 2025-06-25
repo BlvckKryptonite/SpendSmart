@@ -96,7 +96,7 @@ The wireframe below represents the final layout structure of the SpendSmart app:
  ![W3C validation screenshot](assets/images/w3c-validation.png)
  
 
- - CSS validated with [W3C css validation service] (https://jigsaw.w3.org/css-validator/#validate_by_input)
+ - CSS validated with [W3C css validation service](https://jigsaw.w3.org/css-validator/#validate_by_input)
 ![W3C validation screenshot](assets/images/W3C-css-validation)
 
 
