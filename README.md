@@ -162,6 +162,12 @@ The site was deployed to GitHub pages. The following are the deployment steps:
 
 ---
 
+## Development Notes
+
+During development, commits were initially tracked through a connected local IDE. However, partway through the project, a change to the GitHub repository configuration resulted in later changes being committed directly via the GitHub web interface. As a result, some recent commits may lack descriptive messages. Despite this, all features were implemented, tested, and validated according to the project requirements.
+
+---
+
 ## Potential Future Improvements
 
 - Add persistent storage using localStorage or IndexedDB  
@@ -185,5 +191,6 @@ The site was deployed to GitHub pages. The following are the deployment steps:
 This project was developed as part of the Full Stack Software Development Diploma at Code Institute.
 
 ---
+
 
 _Designed and developed by Muma Kalobwe_
