@@ -86,7 +86,7 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 ![Lighthouse report](assets/images/lighthouse-report)
 
 
-###Bugs
+### Bugs
 While I did not experience any major functional bugs, I identified a critical logic bug in the late development process. 
 
 The wellness score was function only considered the most recent expense, not the total of all expenses. Therefore, it did not function as intended as the "Get Insight" button often provided misleading messages.
