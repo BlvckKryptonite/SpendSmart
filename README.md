@@ -117,7 +117,8 @@ While I did not experience any major functional bugs, I identified a critical lo
 - HTML validated with [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fblvckkryptonite.github.io%2FSpendSmart%2F) — minor issues resolved:
 
  ![W3C validation screenshot](assets/images/w3c-validation.png)
- 
+
+ ---
 
  - CSS validated with [W3C css validation service](https://jigsaw.w3.org/css-validator/#validate_by_input)
 ![W3C validation screenshot](assets/images/W3C-css-validation)
