@@ -83,6 +83,9 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 - Manual testing of all buttons, input fields, and dynamic updates  
 - Accessibility: Sufficient contrast, logical heading structure, `aria-labels` where appropriate
 
+![Lighthouse report](assets/images/lighthouse-report)
+
+
 ###Bugs
 While I did not experience any major functional bugs, I identified a critical logic bug in the late development process. 
 
