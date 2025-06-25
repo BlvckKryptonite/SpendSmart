@@ -88,7 +88,7 @@ The wireframe below represents the final layout structure of the SpendSmart app:
 
 
 ## Bugs
-While I did not experience any major functional bugs, I identified a critical logic bug in late in the development process. 
+While I did not experience any major functional bugs, I identified a critical logic bug late in the development process. 
 
 ### Logic Bug: Incorrect Wellness Score Calculation
 
